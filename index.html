@@ -1,0 +1,55 @@
+<html ng-app="portfolio">
+	<head>
+		<title>Portfolio | J. Wat</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+	<body ng-init="tab = 1">
+			<!-- header for md lg -->
+			<div class="hidden-xs hidden-sm visible-md visible-lg header-md-lg">
+				<div class="head-md-lg-home" ng-click="tab = 1"></div>
+				<div class="button-md-lg">
+					<img ng-click="tab = 1" class="t1" src="img/button-md-lg-home.jpg"/>
+					<img ng-click="tab = 2" class="t2" ng-hide="tab === 2" src="img/button-md-lg-about.jpg"/>
+					<img ng-click="tab = 2" class="t2" ng-show="tab === 2" src="img/button-md-lg-about-active.jpg"/>
+					<img ng-click="tab = 3" class="t3" ng-hide="tab === 3" src="img/button-md-lg-portfolio.jpg"/>
+					<img ng-click="tab = 3" class="t3" ng-show="tab === 3" src="img/button-md-lg-portfolio-active.jpg"/>
+					<img ng-click="tab = 4" class="t4" ng-hide="tab === 4" src="img/button-md-lg-contact.jpg"/>
+					<img ng-click="tab = 4" class="t4" ng-show="tab === 4" src="img/button-md-lg-contact-active.jpg"/>
+				</div>
+				<div class="head-title">
+					<img ng-show="tab === 2" src="img/header-md-lg-about.jpg" />
+					<img ng-show="tab === 3" src="img/header-md-lg-portfolio.jpg" />
+					<img ng-show="tab === 4" src="img/header-md-lg-contact.jpg" />
+				</div>
+			</div>
+
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="tab===1">
+				Index
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="tab===2">
+				<about></about>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="tab===3">
+				<div ng-controller="PortfolioController as portfolio">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 portfolio-pages" ng-repeat="page in portfolio.pages">
+				        <img ng-click="tab = 2" src="{{page.imgsrc}}"/>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="tab===4">
+				Contact
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">
+				<img src="img/copyright.jpg"/>
+			</div>
+
+	</body>
+</html>

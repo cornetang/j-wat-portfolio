@@ -1,0 +1,67 @@
+div {
+	border: solid black 1px;
+}
+
+/* header */
+.header-md-lg {
+	background-image: url(../img/header-md-lg.jpg);
+	background-size: cover;
+  	background-position: center;
+  	background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 30.31%;  /* (img-height 414/ img-width 1366) = 30.31%  */
+    position: relative;
+}
+
+.head-md-lg-home {
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	width: 17%;
+	height: 25%;
+}
+
+.button-md-lg {
+	position: absolute;
+	top: 22%;
+	left: 45%;
+	width: 55%;
+	height: 25%;
+}
+.head-title {
+	position: absolute;
+	top: 55%;
+	left: 10%;
+	width: 80%;
+	height: 43%;
+}
+
+.head-title img {
+	width: 100%;
+}
+
+.copyright {
+	text-align: right; padding-right:10%
+}
+
+/* tabs */
+.t1 {
+	width: 12.69%;
+}
+
+.t2 {
+	width: 19.74%;
+}
+
+.t3 {
+	width: 25.38%;
+}
+
+.t4 {
+	width: 22.18%;
+}
+
+/* portfolio */
+.portfolio-pages img{
+	width: 100%;
+}
