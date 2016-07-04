@@ -40,6 +40,7 @@
 				<div ng-controller="PortfolioController as portfolio">
 					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 portfolio-pages" ng-repeat="page in portfolio.pages">
 				        <img ng-click="tab = 2" src="{{page.imgsrc}}"/>
+				        	{{ page.imgnumArray[0]}}
 					</div>
 				</div>
 			</div>
