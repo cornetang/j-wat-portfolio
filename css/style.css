@@ -65,3 +65,15 @@ div {
 .portfolio-pages img{
 	width: 100%;
 }
+
+.left {
+	width: 8%;
+}
+
+.right {
+	width: 8%;
+}
+
+#portimg {
+	width: 80%;
+}

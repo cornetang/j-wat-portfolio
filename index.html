@@ -47,14 +47,21 @@
 						<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" style="text-align: center;">
-						<!-- {{ portfolio.imgno }}<br/>  -->
-							<img ng-show="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left-black.jpg" id="left" style="width:8%"/>
-							<img ng-hide="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left.jpg" id="left" style="width:8%"/>
-							<img src="{{ portfolio.pages[tab.getPortfo()].imgArray[portfolio.getImgNo()] }}" id="img" style="width:80%"/>
-							<img ng-hide="portfolio.rightBlack(tab.getPortfo())" ng-click="portfolio.increment(tab.getPortfo())" src="img/portfolio-arrow-right.jpg" id="right"style="width:8%"/>
-							<img ng-show="portfolio.rightBlack(tab.getPortfo())" ng-click="portfolio.increment(tab.getPortfo())" src="img/portfolio-arrow-right-black.jpg" id="right"style="width:8%"/>
-							<br/>
-							<img src="{{ portfolio.pages[tab.getPortfo()].imgnumArray[portfolio.getImgNo()] }}" id="num" style="width:13%"/>
+							<div ng-show="portfolio.sliderAct(tab.getPortfo())">
+								<img ng-show="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left-black.jpg" class="left" />
+								<img ng-hide="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left.jpg" class="left" />
+								<img src="{{ portfolio.pages[tab.getPortfo()].imgArray[portfolio.getImgNo()] }}" id="portimg" />
+								<img ng-hide="portfolio.rightBlack(tab.getPortfo())" ng-click="portfolio.increment(tab.getPortfo())" src="img/portfolio-arrow-right.jpg" class="right"/>
+								<img ng-show="portfolio.rightBlack(tab.getPortfo())" ng-click="portfolio.increment(tab.getPortfo())" src="img/portfolio-arrow-right-black.jpg" class="right"/>
+								<br/>
+								<img src="{{ portfolio.pages[tab.getPortfo()].imgnumArray[portfolio.getImgNo()] }}" id="num" style="width:13%"/>
+							</div>
+							<div ng-show="portfolio.youtubeAct(tab.getPortfo())">
+								youtube
+								<div class="embed-responsive embed-responsive-16by9 col-xs-10 col-sm-10 col-md-10 col-lg-10">
+								  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LSJI8RNI9Ps" allowfullscreen></iframe>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

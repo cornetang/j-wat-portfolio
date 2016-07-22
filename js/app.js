@@ -35,6 +35,10 @@
   app.controller('PortfolioController', function(){
     this.imgno = 0;
 
+    this.sliderAct = function(portno) {
+        return this.pages[portno].slider;
+    }
+
     this.resetImgNo = function() {
         this.imgno = 0;
     }
@@ -61,6 +65,10 @@
         return this.imgno === this.pages[portno].count - 1;
     }
 
+    this.getYoutubesrc = function(portno) {
+        return this.pages[portno].youtubesrc;
+    }
+
     this.pages = [
       	{ 
     		linksrc: "portfolio-animation.html",
@@ -69,6 +77,8 @@
             name: "ad",
             imgArray: [],
             imgnumArray: [],
+            slider: true,
+            youtube: false,
     	},
     	{ 
     		linksrc: "portfolio-illustration.html",
@@ -77,10 +87,15 @@
             name: "illu",
             imgArray: [],
             imgnumArray: [],
+            slider: true,
+            youtube: false,
     	},
     	{ 
     		linksrc: "portfolio-showreel.html",
     		imgsrc: "img/portfolio-03.jpg",
+            slider: false,
+            youtube: true,
+            youtubesrc: "https://www.youtube.com/embed/LSJI8RNI9Ps",
     	},
     	{ 
     		linksrc: "portfolio-freelance.html",
@@ -89,6 +104,8 @@
             name: "free",
             imgArray: [],
             imgnumArray: [],
+            slider: true,
+            youtube: false,
     	}
     ];
 
