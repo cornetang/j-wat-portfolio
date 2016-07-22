@@ -53,6 +53,14 @@
         return this.imgno;
     }
 
+    this.leftBlack = function() {
+        return this.imgno === 0;
+    }
+
+    this.rightBlack = function(portno) {
+        return this.imgno === this.pages[portno].count - 1;
+    }
+
     this.pages = [
       	{ 
     		linksrc: "portfolio-animation.html",
