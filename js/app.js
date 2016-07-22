@@ -39,6 +39,10 @@
         return this.pages[portno].slider;
     }
 
+    this.youtubeAct = function(portno) {
+        return this.pages[portno].youtube;
+    }
+
     this.resetImgNo = function() {
         this.imgno = 0;
     }
@@ -64,6 +68,8 @@
     this.rightBlack = function(portno) {
         return this.imgno === this.pages[portno].count - 1;
     }
+
+    
 
     this.getYoutubesrc = function(portno) {
         return this.pages[portno].youtubesrc;
