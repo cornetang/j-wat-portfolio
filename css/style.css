@@ -242,26 +242,37 @@ div {
 	width: 60%;
     background: #F3F3F3;
    	border-radius: 50%;
-   	padding-top: 5%;
-   	padding-left: 7%;
-   	padding-right: 7%;
-   	text-align: center;
+   	padding-top: 30%;
+}
+
+.contact-info-inner-md-lg {
+	display: inline-block;
+	position: absolute;
+	top: 10%;
+	left: 35%;
+	width: 60%;
+	padding-top: 5%;
+   	padding-left: 6%;
+   	padding-right: 6%;
 }
 
 .contact-info-xs {
+	position: relative;
     background: #F3F3F3;
    	border-radius: 50%;
-   	padding-top: 8%;
-   	padding-left: 5%;
-   	padding-right: 5%;
    	text-align: center;
-}
-
-.contact-info-inner {
-	display: inline-block;
-	text-align: left;
+   	padding-top: 60%;
+   	width: 100%;
 }
 
 .contact-info-inner-xs {
-	width: 90%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	padding-top: 13%;
+   	padding-left: 9%;
+   	padding-right: 9%;
 }

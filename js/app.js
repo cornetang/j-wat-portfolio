@@ -137,6 +137,12 @@
         }
     });
 
+    app.directive('header', function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'header.html'
+        }
+    });
 
     app.directive('homepage', function(){
         return {
