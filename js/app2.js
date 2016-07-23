@@ -1,48 +1,4 @@
-(function(){
-  
-    var app = angular.module('portfolio', []);
-
-    app.value('portfoInfo',[
-            { 
-                linksrc: "portfolio-animation.html",
-                imgsrc: "img/portfolio-01.jpg",
-                count: 10,
-                name: "ad",
-                imgArray: [],
-                imgnumArray: [],
-                slider: true,
-                youtube: false,
-            },
-            { 
-                linksrc: "portfolio-illustration.html",
-                imgsrc: "img/portfolio-02.jpg",
-                count: 25,
-                name: "illu",
-                imgArray: [],
-                imgnumArray: [],
-                slider: true,
-                youtube: false,
-            },
-            { 
-                linksrc: "portfolio-showreel.html",
-                imgsrc: "img/portfolio-03.jpg",
-                slider: false,
-                youtube: true,
-                youtubesrc: "https://www.youtube.com/embed/LSJI8RNI9Ps",
-            },
-            { 
-                linksrc: "portfolio-freelance.html",
-                imgsrc: "img/portfolio-04.jpg",
-                count: 3,
-                name: "free",
-                imgArray: [],
-                imgnumArray: [],
-                slider: true,
-                youtube: false,
-            }
-        ]);
-
-    app.controller('TabController', [ '$window', function($window){
+app.controller('TabController', [ '$window', function($window){
         this.tab = 1;
         this.slide = -1;
         this.portfo = -1;
@@ -86,14 +42,6 @@
 
     app.controller('PortfolioController', [ '$sce', 'portfoInfo', function($sce, portfoInfo){
         this.imgno = 0;
-        this.pages = portfoInfo;
-
-        this.pages.forEach(function(entry){
-          for (i=1;i<=entry.count;i++) {
-            entry.imgArray[i-1] = "img/" + entry.name + i + ".jpg";
-            entry.imgnumArray[i-1] = "img/" + entry.name + "num" + i + ".jpg";
-          }
-        });
 
         this.sliderAct = function(portno) {
             return this.pages[portno].slider;
@@ -133,6 +81,14 @@
             return $sce.trustAsResourceUrl(this.pages[portno].youtubesrc);
         }
 
+        this.pages = portfoInfo;
+
+        this.pages.forEach(function(entry){
+          for (i=1;i<=entry.count;i++) {
+            entry.imgArray[i-1] = "img/" + entry.name + i + ".jpg";
+            entry.imgnumArray[i-1] = "img/" + entry.name + "num" + i + ".jpg";
+          }
+        });
     }]);
 
     app.directive('header', function(){
@@ -176,5 +132,3 @@
             templateUrl: 'footer.html'
         }
     });
-
-})();
