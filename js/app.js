@@ -2,7 +2,7 @@
   
     var app = angular.module('portfolio', []);
 
-    app.controller('TabController', function($window){
+    app.controller('TabController', [ '$window', function($window){
         this.tab = 1;
         this.slide = -1;
         this.portfo = -1;
@@ -42,9 +42,9 @@
             return this.portfo;
         }
 
-    });
+    }]);
 
-    app.controller('PortfolioController', function(){
+    app.controller('PortfolioController', [ '$sce', function($sce){
         this.imgno = 0;
 
         this.sliderAct = function(portno) {
@@ -82,7 +82,7 @@
         }
 
         this.getYoutubesrc = function(portno) {
-            return this.pages[portno].youtubesrc;
+            return $sce.trustAsResourceUrl(this.pages[portno].youtubesrc);
         }
 
         this.pages = [
@@ -135,7 +135,7 @@
         this.copyright = function(){
           $('.copyright').append("abc");
         }
-    });
+    }]);
 
     app.directive('header', function(){
         return {
