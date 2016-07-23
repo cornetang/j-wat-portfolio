@@ -10,8 +10,10 @@
 		<script src="js/script.js"></script>
 	</head>
 	<body ng-controller="TabController as tab">
+			<a id="top"></a>
+
 			<!-- header for md lg -->
-			<div class="hidden-xs hidden-sm visible-md visible-lg header-md-lg">
+			<div class="hidden-xs hidden-sm visible-md visible-lg header-md-lg" ng-hide="tab.checkTab(1)">
 				<div class="head-md-lg-home" ng-click="tab.setTab(1)"></div>
 				<div class="button-md-lg">
 					<img ng-click="tab.setTab(1)" class="t1" src="img/button-md-lg-home.jpg"/>
@@ -30,49 +32,32 @@
 			</div>
 
 
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="tab.checkTab(1)">
-				Index
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="tab.checkTab(2)">
-				<about></about>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="tab.checkTab(3)">
-				<div ng-controller="PortfolioController as portfolio">
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 portfolio-pages" ng-repeat="page in portfolio.pages" ng-show="tab.checkSlide(-1)">
-				        <img ng-click="$parent.tab.setSlide($index); portfolio.resetImgNo()" src="{{page.imgsrc}}"/>
-				        	<!-- {{ page.imgnumArray[0]}} <br/> -->
-				        	<!-- <div >{{ $index }}</div> -->
-					</div>
-					<div ng-show="tab.checkSlide(1)">
-						<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" style="text-align: center;">
-							<div ng-show="portfolio.sliderAct(tab.getPortfo())">
-								<img ng-show="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left-black.jpg" class="left" />
-								<img ng-hide="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left.jpg" class="left" />
-								<img src="{{ portfolio.pages[tab.getPortfo()].imgArray[portfolio.getImgNo()] }}" id="portimg" />
-								<img ng-hide="portfolio.rightBlack(tab.getPortfo())" ng-click="portfolio.increment(tab.getPortfo())" src="img/portfolio-arrow-right.jpg" class="right"/>
-								<img ng-show="portfolio.rightBlack(tab.getPortfo())" ng-click="portfolio.increment(tab.getPortfo())" src="img/portfolio-arrow-right-black.jpg" class="right"/>
-								<br/>
-								<img src="{{ portfolio.pages[tab.getPortfo()].imgnumArray[portfolio.getImgNo()] }}" id="num" style="width:13%"/>
-							</div>
-							<div ng-show="portfolio.youtubeAct(tab.getPortfo())">
-								youtube
-<!-- 								<div class="embed-responsive embed-responsive-16by9 col-xs-10 col-sm-10 col-md-10 col-lg-10">
-								  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LSJI8RNI9Ps" allowfullscreen></iframe>
-								</div> -->
-							</div>
-						</div>
-					</div>
+			<!-- content for xs sm devices -->
+			<div class="visible-xs visible-sm hidden-md hidden-lg mobile-head">
+				<div class="header-xs" style="background-image: url(img/header-xs.jpg);">
+					<div class="header-xs-home"></div>
+					<div class="menu-xs" ng-click="tab.toggleXsMenu()"><img src="img/header-xs-expand.jpg" style="width: 80%;"/></div>
+				</div>
+				<div class="button-xs" ng-show="tab.getXsMenu()">
+					<div style="width:100%; height:8%;"></div>
+					<img ng-click="tab.setTab(1); tab.toggleXsMenu()" src="img/button-xs-home.jpg" style="width: 25.22%;"/><br/>
+					<img ng-click="tab.setTab(2); tab.toggleXsMenu()" src="img/button-xs-about.jpg" style="width: 26.50%;"/><br/>
+					<img ng-click="tab.setTab(3); tab.toggleXsMenu()" src="img/button-xs-portfolio.jpg" style="width: 40%;"/><br/>
+					<img ng-click="tab.setTab(4); tab.toggleXsMenu()" src="img/button-xs-contact.jpg" style="width: 33.12%;"/>
+					<div style="width:100%; height:5%;"></div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="tab.checkTab(4)">
-				Contact
-			</div>
 
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copyright">
-				<img src="img/copyright.jpg"/>
-			</div>
 
+
+			<homepage ng-show="tab.checkTab(1)"></homepage>
+			
+			<about ng-show="tab.checkTab(2)"></about>
+
+			<portfolio ng-show="tab.checkTab(3)"></portfolio>
+
+			<contact ng-show="tab.checkTab(4)"></contact>
+
+			<footer></footer>
 	</body>
 </html>
