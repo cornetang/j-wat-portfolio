@@ -44,7 +44,7 @@
 
     }]);
 
-    app.controller('PortfolioController', [ '$sce', function($sce){
+    app.controller('PortfolioController', [ '$sce', '$http', function($sce, $http){
         this.imgno = 0;
 
         this.sliderAct = function(portno) {
@@ -85,45 +85,50 @@
             return $sce.trustAsResourceUrl(this.pages[portno].youtubesrc);
         }
 
-        this.pages = [
-          	{ 
-        		linksrc: "portfolio-animation.html",
-        		imgsrc: "img/portfolio-01.jpg",
-                count: 10,
-                name: "ad",
-                imgArray: [],
-                imgnumArray: [],
-                slider: true,
-                youtube: false,
-        	},
-        	{ 
-        		linksrc: "portfolio-illustration.html",
-        		imgsrc: "img/portfolio-02.jpg",
-                count: 25,
-                name: "illu",
-                imgArray: [],
-                imgnumArray: [],
-                slider: true,
-                youtube: false,
-        	},
-        	{ 
-        		linksrc: "portfolio-showreel.html",
-        		imgsrc: "img/portfolio-03.jpg",
-                slider: false,
-                youtube: true,
-                youtubesrc: "https://www.youtube.com/embed/LSJI8RNI9Ps",
-        	},
-        	{ 
-        		linksrc: "portfolio-freelance.html",
-        		imgsrc: "img/portfolio-04.jpg",
-                count: 3,
-                name: "free",
-                imgArray: [],
-                imgnumArray: [],
-                slider: true,
-                youtube: false,
-        	}
-        ];
+        var store = this;
+        store.pages = [];
+        $http.get('/portfolioArray.json').success(function(data){
+            store.pages = data;
+        });
+        // this.pages = [
+        //   	{ 
+        // 		linksrc: "portfolio-animation.html",
+        // 		imgsrc: "img/portfolio-01.jpg",
+        //         count: 10,
+        //         name: "ad",
+        //         imgArray: [],
+        //         imgnumArray: [],
+        //         slider: true,
+        //         youtube: false,
+        // 	},
+        // 	{ 
+        // 		linksrc: "portfolio-illustration.html",
+        // 		imgsrc: "img/portfolio-02.jpg",
+        //         count: 25,
+        //         name: "illu",
+        //         imgArray: [],
+        //         imgnumArray: [],
+        //         slider: true,
+        //         youtube: false,
+        // 	},
+        // 	{ 
+        // 		linksrc: "portfolio-showreel.html",
+        // 		imgsrc: "img/portfolio-03.jpg",
+        //         slider: false,
+        //         youtube: true,
+        //         youtubesrc: "https://www.youtube.com/embed/LSJI8RNI9Ps",
+        // 	},
+        // 	{ 
+        // 		linksrc: "portfolio-freelance.html",
+        // 		imgsrc: "img/portfolio-04.jpg",
+        //         count: 3,
+        //         name: "free",
+        //         imgArray: [],
+        //         imgnumArray: [],
+        //         slider: true,
+        //         youtube: false,
+        // 	}
+        // ];
 
         this.pages.forEach(function(entry){
           for (i=1;i<=entry.count;i++) {
@@ -131,10 +136,6 @@
             entry.imgnumArray[i-1] = "img/" + entry.name + "num" + i + ".jpg";
           }
         });
-
-        this.copyright = function(){
-          $('.copyright').append("abc");
-        }
     }]);
 
     app.directive('header', function(){
