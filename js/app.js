@@ -108,8 +108,6 @@
             ctrl.imgno = 0;
         }
 
-        
-
         this.increment = function(portno) {
             $("#portimg").fadeTo("normal", 0);
 
