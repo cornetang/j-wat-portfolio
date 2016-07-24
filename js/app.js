@@ -104,10 +104,11 @@
         });
 
         this.preload = function(portno){
-            this.pages[portno].forEach(function(){
-                (new Image()).src = this;
-            });
-            
+            $('.testing').append("clicked");
+            for (i=0; i<this.pages[portno].count; i++){
+                (new Image()).src = this.pages[portno].imgArray[i];
+                $('.testing').append(this.pages[portno].imgArray[i]);
+            }
             
         }
 
