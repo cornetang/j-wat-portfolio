@@ -1,5 +1,9 @@
 div {
-	border: solid black 1px;
+	/*border: solid black 1px;*/
+}
+
+.youtubeFrame {
+	border: solid black 1px;	
 }
 
 /* header md lg*/
