@@ -7,6 +7,9 @@
 			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10" style="text-align: center;">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<img ng-src="{{ portfolio.pages[tab.getPortfo()].title }}">
+				</div>
 				<div ng-show="portfolio.sliderAct(tab.getPortfo())">
 					<img ng-show="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left-black.jpg" class="left" />
 					<img ng-hide="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left.jpg" class="left" />
@@ -15,7 +18,6 @@
 					<img ng-show="portfolio.rightBlack(tab.getPortfo())" ng-click="portfolio.increment(tab.getPortfo())" src="img/portfolio-arrow-right-black.jpg" class="right"/>
 					<br/>
 					<img src="{{ portfolio.pages[tab.getPortfo()].imgnumArray[portfolio.getImgNo()] }}" id="num" style="width:13%"/>
-					<div class="testing">testing</div>
 				</div>
 				<div ng-show="portfolio.youtubeAct(tab.getPortfo())">
 					<div class="embed-responsive embed-responsive-16by9">

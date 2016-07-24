@@ -4,26 +4,30 @@
 
     app.value('portfoInfo',[
             { 
+                name: "ad",
+                title: "",
                 linksrc: "portfolio-animation.html",
                 imgsrc: "img/portfolio-01.jpg",
                 count: 10,
-                name: "ad",
                 imgArray: [],
                 imgnumArray: [],
                 slider: true,
                 youtube: false,
             },
             { 
+                name: "illu",
+                title: "",
                 linksrc: "portfolio-illustration.html",
                 imgsrc: "img/portfolio-02.jpg",
                 count: 25,
-                name: "illu",
                 imgArray: [],
                 imgnumArray: [],
                 slider: true,
                 youtube: false,
             },
             { 
+                name: "showreel",
+                title: "",
                 linksrc: "portfolio-showreel.html",
                 imgsrc: "img/portfolio-03.jpg",
                 slider: false,
@@ -31,10 +35,12 @@
                 youtubesrc: "https://www.youtube.com/embed/LSJI8RNI9Ps",
             },
             { 
+                
+                name: "free",
+                title: "",
                 linksrc: "portfolio-freelance.html",
                 imgsrc: "img/portfolio-04.jpg",
                 count: 3,
-                name: "free",
                 imgArray: [],
                 imgnumArray: [],
                 slider: true,
@@ -94,6 +100,7 @@
             entry.imgArray[i-1] = "img/" + entry.name + i + ".jpg";
             entry.imgnumArray[i-1] = "img/" + entry.name + "num" + i + ".jpg";
           }
+          entry.title = "img/" + entry.name + "-title.jpg";
         });
 
         this.sliderAct = function(portno) {
@@ -118,7 +125,6 @@
             );
             
             $("#portimg").fadeTo("normal", 1);
-            $('.testing').append("abc");
         }
 
         this.decrement = function(portno) {
