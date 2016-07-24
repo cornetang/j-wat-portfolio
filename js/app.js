@@ -108,10 +108,6 @@
             return this.portIndex;
         }
 
-        this.preload = function(portno){
-            
-        }
-
         this.sliderAct = function() {
             return this.pages[this.portIndex].slider;
         }
@@ -119,8 +115,6 @@
         this.youtubeAct = function() {
             return this.pages[this.portIndex].youtube;
         }
-
-
 
         this.increment = function() {
             $("#portimg").fadeTo("normal", 0);
