@@ -103,7 +103,7 @@
           entry.title = "img/" + entry.name + "-title.jpg";
         });
 
-        this.prelaod = function(portno){
+        this.preload = function(portno){
             this.pages[portno].imgArray.forEach(function(entry){
                 (new Image()).src = this;
             }
