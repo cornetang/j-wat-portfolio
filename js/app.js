@@ -104,10 +104,11 @@
         });
 
         this.preload = function(portno){
-            this.pages[portno].imgArray.forEach(function(entry){
+            this.pages[portno].forEach(function(){
                 (new Image()).src = this;
-            }
-                
+            });
+            
+            
         }
 
         this.sliderAct = function(portno) {
