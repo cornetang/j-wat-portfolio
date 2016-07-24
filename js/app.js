@@ -104,9 +104,10 @@
         });
 
         this.prelaod = function(portno){
-            $(ctrl.pages[portno].imgArray).each(function(){
+            this.pages[portno].imgArray.forEach(function(entry){
                 (new Image()).src = this;
-            });
+            }
+                
         }
 
         this.sliderAct = function(portno) {
