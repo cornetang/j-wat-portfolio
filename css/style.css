@@ -1,5 +1,5 @@
 div {
-	border: solid black 1px;
+	/*border: solid black 1px;*/
 }
 
 /* header md lg*/
@@ -275,18 +275,4 @@ div {
 	padding-top: 13%;
    	padding-left: 9%;
    	padding-right: 9%;
-}
-
-/*fade*/
-.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
-    transition: all linear 0.5s;
-    display: block !important;
-}
-
-.animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove {
-    opacity: 0;
-}
-
-.animate-show.ng-hide-add, .animate-show.ng-hide-remove.ng-hide-remove-active {
-    opacity: 1;
 }

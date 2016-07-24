@@ -1,7 +1,7 @@
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div ng-controller="PortfolioController as portfolio">
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 portfolio-pages" ng-repeat="page in portfolio.pages" ng-show="tab.checkSlide(-1)">
-	        <img ng-click="$parent.tab.setSlide($index); portfolio.resetImgNo()" src="{{page.imgsrc}}"/>
+	        <img ng-click="$parent.tab.setSlide($index); portfolio.resetImgNo(); portfolio.preload($index)" src="{{page.imgsrc}}"/>
 		</div>
 		<div ng-show="tab.checkSlide(1)">
 			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">

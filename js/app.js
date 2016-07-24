@@ -103,6 +103,12 @@
           entry.title = "img/" + entry.name + "-title.jpg";
         });
 
+        this.prelaod = function(portno){
+            $(ctrl.pages[portno].imgArray).each(function(){
+                (new Image()).src = this;
+            });
+        }
+
         this.sliderAct = function(portno) {
             return this.pages[portno].slider;
         }
