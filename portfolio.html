@@ -10,7 +10,7 @@
 				<div ng-show="portfolio.sliderAct(tab.getPortfo())">
 					<img ng-show="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left-black.jpg" class="left" />
 					<img ng-hide="portfolio.leftBlack()" ng-click="portfolio.decrement(tab.getPortfo())" src="img/portfolio-arrow-left.jpg" class="left" />
-					<img src="{{ portfolio.pages[tab.getPortfo()].imgArray[portfolio.getImgNo()] }}" id="portimg" class="animate-show" fade-in />
+					<img src="{{ portfolio.pages[tab.getPortfo()].imgArray[portfolio.getImgNo()] }}" id="portimg" />
 					<img ng-hide="portfolio.rightBlack(tab.getPortfo())" ng-click="portfolio.increment(tab.getPortfo())" src="img/portfolio-arrow-right.jpg" class="right"/>
 					<img ng-show="portfolio.rightBlack(tab.getPortfo())" ng-click="portfolio.increment(tab.getPortfo())" src="img/portfolio-arrow-right-black.jpg" class="right"/>
 					<br/>
