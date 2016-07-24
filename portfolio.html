@@ -13,11 +13,11 @@
 				<div ng-show="portfolio.sliderAct()">
 					<img ng-show="portfolio.leftBlack()" ng-click="portfolio.decrement()" src="img/portfolio-arrow-left-black.jpg" class="left" />
 					<img ng-hide="portfolio.leftBlack()" ng-click="portfolio.decrement()" src="img/portfolio-arrow-left.jpg" class="left" />
-					<img src="{{ portfolio.pages[tab.getPortfo()].imgArray[portfolio.getImgNo()] }}" id="portimg" />
+					<img src="{{ portfolio.pages[portfolio.getPortIndex()].imgArray[portfolio.getImgNo()] }}" id="portimg" />
 					<img ng-hide="portfolio.rightBlack()" ng-click="portfolio.increment()" src="img/portfolio-arrow-right.jpg" class="right"/>
 					<img ng-show="portfolio.rightBlack()" ng-click="portfolio.increment()" src="img/portfolio-arrow-right-black.jpg" class="right"/>
 					<br/>
-					<img src="{{ portfolio.pages[tab.getPortfo()].imgnumArray[portfolio.getImgNo()] }}" id="num" style="width:13%"/>
+					<img src="{{ portfolio.pages[portfolio.getPortIndex()].imgnumArray[portfolio.getImgNo()] }}" id="num" style="width:13%"/>
 				</div>
 				<div ng-show="portfolio.youtubeAct(tab.getPortfo())">
 					<div class="embed-responsive embed-responsive-16by9 youtubeFrame">

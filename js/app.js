@@ -104,6 +104,10 @@
           entry.title = "img/" + entry.name + "-title.jpg";
         });
 
+        this.getPortIndex = function(){
+            return this.portIndex;
+        }
+
         this.preload = function(portno){
             for (i=0; i<this.pages[portno].count; i++){
                 (new Image()).src = this.pages[portno].imgArray[i];
