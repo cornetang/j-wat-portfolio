@@ -84,8 +84,9 @@
 
     }]);
 
-    app.controller('PortfolioController', [ '$sce', 'portfoInfo', '$scope', function($sce, portfoInfo, $scope){
-        $scope.imgno = 0;
+    app.controller('PortfolioController', [ '$sce', 'portfoInfo', '$scope', '$timeout', function($sce, portfoInfo, $scope, $timeout){
+        var ctrl = this;
+        ctrl.imgno = 0;
         this.pages = portfoInfo;
 
         this.pages.forEach(function(entry){
@@ -104,34 +105,46 @@
         }
 
         this.resetImgNo = function() {
-            $scope.imgno = 0;
+            ctrl.imgno = 0;
         }
 
+        
+
         this.increment = function(portno) {
-            $("#portimg").fadeTo("fast", 0, function(){
-                $scope.imgno = $scope.imgno + 1;    
-            });
+            $("#portimg").fadeTo("normal", 0);
+
+            $timeout( function(){ 
+                ctrl.imgno = ctrl.imgno + 1;    
+                if (ctrl.imgno === ctrl.pages[portno].count) ctrl.imgno = 0;    
+                }, 400
+            );
             
-            if ($scope.imgno === this.pages[portno].count) $scope.imgno = 0;
-            $("#portimg").fadeTo("fast", 1);
+            $("#portimg").fadeTo("normal", 1);
             $('.testing').append("abc");
         }
 
         this.decrement = function(portno) {
-            $scope.imgno = $scope.imgno - 1;
-            if ($scope.imgno === -1) $scope.imgno = this.pages[portno].count - 1;
+            $("#portimg").fadeTo("normal", 0);
+
+            $timeout( function(){ 
+                ctrl.imgno = ctrl.imgno - 1;
+                if (ctrl.imgno === -1) ctrl.imgno = ctrl.pages[portno].count - 1;
+            }, 400
+            );
+            
+            $("#portimg").fadeTo("normal", 1);
         }
 
         this.getImgNo = function() {
-            return $scope.imgno;
+            return ctrl.imgno;
         }
 
         this.leftBlack = function() {
-            return $scope.imgno === 0;
+            return ctrl.imgno === 0;
         }
 
         this.rightBlack = function(portno) {
-            return $scope.imgno === this.pages[portno].count - 1;
+            return ctrl.imgno === this.pages[portno].count - 1;
         }
 
         this.getYoutubesrc = function(portno) {
