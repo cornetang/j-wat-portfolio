@@ -1,0 +1,35 @@
+<!-- header for md lg -->
+<div class="hidden-xs hidden-sm visible-md visible-lg header-md-lg" ng-hide="tab.checkTab(1)">
+	<div class="head-md-lg-home" ng-click="tab.setTab(1)"></div>
+	<div class="button-md-lg">
+		<img ng-click="tab.setTab(1)" class="t1" src="img/button-md-lg-home.jpg"/>
+		<img ng-click="tab.setTab(2)" class="t2" ng-hide="tab.checkTab(2)" src="img/button-md-lg-about.jpg"/>
+		<img ng-click="tab.setTab(2)" class="t2" ng-show="tab.checkTab(2)" src="img/button-md-lg-about-active.jpg"/>
+		<img ng-click="tab.setTab(3)" class="t3" ng-hide="tab.checkTab(3)" src="img/button-md-lg-portfolio.jpg"/>
+		<img ng-click="tab.setTab(3)" class="t3" ng-show="tab.checkTab(3)" src="img/button-md-lg-portfolio-active.jpg"/>
+		<img ng-click="tab.setTab(4)" class="t4" ng-hide="tab.checkTab(4)" src="img/button-md-lg-contact.jpg"/>
+		<img ng-click="tab.setTab(4)" class="t4" ng-show="tab.checkTab(4)" src="img/button-md-lg-contact-active.jpg"/>
+	</div>
+	<div class="head-title">
+		<img ng-show="tab.checkTab(2)" src="img/header-md-lg-about.jpg" />
+		<img ng-show="tab.checkTab(3)" src="img/header-md-lg-portfolio.jpg" />
+		<img ng-show="tab.checkTab(4)" src="img/header-md-lg-contact.jpg" />
+	</div>
+</div>
+
+
+<!-- content for xs sm devices -->
+<div class="visible-xs visible-sm hidden-md hidden-lg mobile-head" ng-hide="tab.checkTab(1)">
+	<div class="header-xs" style="background-image: url(img/header-xs.jpg);">
+		<div ng-click="tab.setTab(1); tab.toggleXsMenu()" class="header-xs-home"></div>
+		<div class="menu-xs" ng-click="tab.toggleXsMenu()"><img src="img/header-xs-expand.jpg" style="width: 80%;"/></div>
+	</div>
+	<div class="button-xs" ng-show="tab.getXsMenu()">
+		<div style="width:100%; height:8%;"></div>
+		<img ng-click="tab.setTab(1); tab.toggleXsMenu()" src="img/button-xs-home.jpg" style="width: 25.22%;"/><br/>
+		<img ng-click="tab.setTab(2); tab.toggleXsMenu()" src="img/button-xs-about.jpg" style="width: 26.50%;"/><br/>
+		<img ng-click="tab.setTab(3); tab.toggleXsMenu()" src="img/button-xs-portfolio.jpg" style="width: 40%;"/><br/>
+		<img ng-click="tab.setTab(4); tab.toggleXsMenu()" src="img/button-xs-contact.jpg" style="width: 33.12%;"/>
+		<div style="width:100%; height:5%;"></div>
+	</div>
+</div>

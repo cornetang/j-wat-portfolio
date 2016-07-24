@@ -1,0 +1,292 @@
+div {
+	border: solid black 1px;
+}
+
+/* header md lg*/
+.header-md-lg {
+	background-image: url(../img/header-md-lg.jpg);
+	background-size: cover;
+  	background-position: center;
+  	background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 30.31%;  /* (img-height 414/ img-width 1366) = 30.31%  */
+    position: relative;
+}
+
+.head-md-lg-home {
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	width: 17%;
+	height: 25%;
+}
+
+.button-md-lg {
+	position: absolute;
+	top: 22%;
+	left: 45%;
+	width: 55%;
+	height: 25%;
+}
+.head-title {
+	position: absolute;
+	top: 55%;
+	left: 10%;
+	width: 80%;
+	height: 43%;
+}
+
+.head-title img {
+	width: 100%;
+}
+
+/*header xs*/
+
+.button-xs {
+	background-image: url(../img/button-xs-frame.jpg);
+	background-size: 80%;
+  	background-position: center;
+  	background-repeat: no-repeat;
+    width: 100%;
+    text-align: center;
+	position: relative;
+}
+
+.mobile-head {
+	position: relative;
+}
+
+.header-xs {
+	/*background-image: url(img/header-xs.jpg);*/
+	background-size: cover;
+  	background-position: center;
+  	background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 33.95%;  /* (img-height 257/ img-width 757) = 33.95%  */
+    position: relative;
+}
+
+.header-xs-home {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 43%;
+	height: 60%;
+}
+
+.menu-xs {
+	position: absolute;
+	top: 20%;
+	left: 80%;
+	width: 20%;
+	height: auto;
+}
+
+.copyright {
+	text-align: right; padding-right:10%
+}
+
+/* tabs */
+.t1 {
+	width: 12.69%;
+}
+
+.t2 {
+	width: 19.74%;
+}
+
+.t3 {
+	width: 25.38%;
+}
+
+.t4 {
+	width: 22.18%;
+}
+
+/*homepage*/
+.index {
+	background-image: url(../img/index-img.jpg);
+	background-size: cover;
+	background-position: center;
+  	background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 71.52%;  /* (img-height 977/ img-width 1366) = 71.52%  */
+    position: relative;
+}
+
+.index-home {
+	position: absolute;
+	width: 9%;
+	height: 7%;
+	top: 37%;
+	left: 38%;
+}
+
+.index-about {
+	position: absolute;
+	width: 9%;
+	height: 7%;
+	top: 40%;
+	left: 52%;
+}
+
+.index-portfolio {
+	position: absolute;
+	width: 11%;
+	height: 7%;
+	top: 40%;
+	left: 65%;
+}
+
+.index-contact {
+	position: absolute;
+	width: 11%;
+	height: 7%;
+	top: 39%;
+	left: 80%;
+}
+
+.index-contact-email {
+	position: absolute;
+	width: 6%;
+	height: 7%;
+	top: 83%;
+	left: 53%;
+}
+
+.index-contact-instagram {
+	position: absolute;
+	width: 6%;
+	height: 7%;
+	top: 83%;
+	left: 60%;
+}
+
+.index-contact-youtube {
+	position: absolute;
+	width: 6%;
+	height: 7%;
+	top: 83%;
+	left: 67%;
+}
+
+.index-xs {
+	background-image: url(../img/index-xs-head.jpg);
+	background-size: cover;
+	background-position: center;
+  	background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 48.28%;  /* (img-height 412/ img-width 836) = 49.28%  */
+    position: relative;
+}
+
+.index-xs-home {
+	position: absolute;
+	width: 15%;
+	height: 17%;
+	top: 72%;
+	left: 4%;
+}
+
+.index-xs-about {
+	position: absolute;
+	width: 15%;
+	height: 19%;
+	top: 76%;
+	left: 27%;
+}
+
+.index-xs-portfolio {
+	position: absolute;
+	width: 18%;
+	height: 19%;
+	top: 75%;
+	left: 49%;
+}
+
+.index-xs-contact {
+	position: absolute;
+	width: 19%;
+	height: 17%;
+	top: 75%;
+	left: 72%;
+}
+
+.index-xs-contact-buttons img{
+	width: 50%;
+	margin-top: 20%;
+}
+
+/* portfolio */
+.portfolio-pages img{
+	width: 100%;
+}
+
+.left {
+	width: 8%;
+}
+
+.right {
+	width: 8%;
+}
+
+#portimg {
+	width: 80%;
+}
+
+/*contact*/
+.contact-info-md-lg {
+	position: absolute;
+	top: 10%;
+	left: 35%;
+	width: 60%;
+    background: #F3F3F3;
+   	border-radius: 50%;
+   	padding-top: 30%;
+}
+
+.contact-info-inner-md-lg {
+	display: inline-block;
+	position: absolute;
+	top: 10%;
+	left: 35%;
+	width: 60%;
+	padding-top: 5%;
+   	padding-left: 6%;
+   	padding-right: 6%;
+}
+
+.contact-info-xs {
+	position: relative;
+    background: #F3F3F3;
+   	border-radius: 50%;
+   	text-align: center;
+   	padding-top: 60%;
+   	width: 100%;
+}
+
+.contact-info-inner-xs {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	padding-top: 13%;
+   	padding-left: 9%;
+   	padding-right: 9%;
+}
+
+/*fade*/
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+    transition: all linear 0.5s;
+    display: block !important;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove {
+    opacity: 0;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+}
