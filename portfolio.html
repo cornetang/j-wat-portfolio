@@ -19,7 +19,7 @@
 					<br/>
 					<img src="{{ portfolio.pages[portfolio.getPortIndex()].imgnumArray[portfolio.getImgNo()] }}" id="num" style="width:13%"/>
 				</div>
-				<div ng-show="portfolio.youtubeAct(tab.getPortfo())">
+				<div ng-show="portfolio.youtubeAct(portfolio.getPortIndex())">
 					<div class="embed-responsive embed-responsive-16by9 youtubeFrame">
 					  	<iframe class="embed-responsive-item" ng-src="{{ portfolio.getYoutubesrc() }}" allowfullscreen></iframe>
 					</div>
