@@ -106,9 +106,7 @@
         this.preload = function(portno){
             for (i=0; i<this.pages[portno].count; i++){
                 (new Image()).src = this.pages[portno].imgArray[i];
-                $('.testing').append(this.pages[portno].imgArray[i]);
             }
-              
         }
 
         this.sliderAct = function(portno) {
