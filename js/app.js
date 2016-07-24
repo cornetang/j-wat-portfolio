@@ -84,8 +84,8 @@
 
     }]);
 
-    app.controller('PortfolioController', [ '$sce', 'portfoInfo', function($sce, portfoInfo){
-        this.imgno = 0;
+    app.controller('PortfolioController', [ '$sce', 'portfoInfo', '$scope', function($sce, portfoInfo, $scope){
+        $scope.imgno = 0;
         this.pages = portfoInfo;
 
         this.pages.forEach(function(entry){
@@ -104,29 +104,34 @@
         }
 
         this.resetImgNo = function() {
-            this.imgno = 0;
+            $scope.imgno = 0;
         }
 
         this.increment = function(portno) {
-            this.imgno = this.imgno + 1;
-            if (this.imgno === this.pages[portno].count) this.imgno = 0;
+            $("#portimg").fadeTo("fast", 0, function(){
+                $scope.imgno = $scope.imgno + 1;    
+            });
+            
+            if ($scope.imgno === this.pages[portno].count) $scope.imgno = 0;
+            $("#portimg").fadeTo("fast", 1);
+            $('.testing').append("abc");
         }
 
         this.decrement = function(portno) {
-            this.imgno = this.imgno - 1;
-            if (this.imgno === -1) this.imgno = this.pages[portno].count - 1;
+            $scope.imgno = $scope.imgno - 1;
+            if ($scope.imgno === -1) $scope.imgno = this.pages[portno].count - 1;
         }
 
         this.getImgNo = function() {
-            return this.imgno;
+            return $scope.imgno;
         }
 
         this.leftBlack = function() {
-            return this.imgno === 0;
+            return $scope.imgno === 0;
         }
 
         this.rightBlack = function(portno) {
-            return this.imgno === this.pages[portno].count - 1;
+            return $scope.imgno === this.pages[portno].count - 1;
         }
 
         this.getYoutubesrc = function(portno) {
