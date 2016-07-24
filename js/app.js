@@ -108,13 +108,13 @@
         }
 
         this.increment = function(portno) {
-            $("#portimg").fadeTo("fast", 0, function(){
+            // $("#portimg").fadeTo("fast", 0, function(){
                 $scope.imgno = $scope.imgno + 1;    
-            });
+            // });
             
             if ($scope.imgno === this.pages[portno].count) $scope.imgno = 0;
-            $("#portimg").fadeTo("fast", 1);
-            $('.testing').append("abc");
+            // $("#portimg").fadeTo("fast", 1);
+            // $('.testing').append("abc");
         }
 
         this.decrement = function(portno) {
@@ -181,5 +181,18 @@
             templateUrl: 'footer.html'
         }
     });
+
+    app.directive('fadeIn', function($timeout){
+        return {
+            restrict: 'A',
+            link: function($scope, $element, attrs){
+                $element.addClass("ng-hide-remove");
+                $element.on('load', function() {
+                    $element.addClass("ng-hide-add");
+                });
+            }
+        };
+    });
+
 
 })();
