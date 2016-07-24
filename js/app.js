@@ -94,6 +94,7 @@
         var ctrl = this;
         ctrl.imgno = 0;
         this.pages = portfoInfo;
+        this.portIndex = -1;
 
         this.pages.forEach(function(entry){
           for (i=1;i<=entry.count;i++) {
@@ -109,56 +110,53 @@
             }
         }
 
-        this.sliderAct = function(portno) {
-            return this.pages[portno].slider;
+        this.sliderAct = function() {
+            return this.pages[this.portIndex].slider;
         }
 
-        this.youtubeAct = function(portno) {
-            return this.pages[portno].youtube;
+        this.youtubeAct = function() {
+            return this.pages[this.portIndex].youtube;
         }
 
-        this.resetImgNo = function() {
-            ctrl.imgno = 0;
+        this.resetImgNo = function(index) {
+            this.imgno = 0;
+            this.portIndex = index;
         }
 
-        this.increment = function(portno) {
+        this.increment = function() {
             $("#portimg").fadeTo("normal", 0);
-
             $timeout( function(){ 
                 ctrl.imgno = ctrl.imgno + 1;    
-                if (ctrl.imgno === ctrl.pages[portno].count) ctrl.imgno = 0;    
+                if (ctrl.imgno === ctrl.pages[ctrl.portIndex].count) ctrl.imgno = 0;    
                 }, 400
             );
-            
             $("#portimg").fadeTo("normal", 1);
         }
 
-        this.decrement = function(portno) {
+        this.decrement = function() {
             $("#portimg").fadeTo("normal", 0);
-
             $timeout( function(){ 
                 ctrl.imgno = ctrl.imgno - 1;
-                if (ctrl.imgno === -1) ctrl.imgno = ctrl.pages[portno].count - 1;
+                if (ctrl.imgno === -1) ctrl.imgno = ctrl.pages[ctrl.portIndex].count - 1;
             }, 400
             );
-            
             $("#portimg").fadeTo("normal", 1);
         }
 
         this.getImgNo = function() {
-            return ctrl.imgno;
+            return this.imgno;
         }
 
         this.leftBlack = function() {
-            return ctrl.imgno === 0;
+            return this.imgno === 0;
         }
 
-        this.rightBlack = function(portno) {
-            return ctrl.imgno === this.pages[portno].count - 1;
+        this.rightBlack = function() {
+            return this.imgno === this.pages[this.portIndex].count - 1;
         }
 
-        this.getYoutubesrc = function(portno) {
-            return $sce.trustAsResourceUrl(this.pages[portno].youtubesrc);
+        this.getYoutubesrc = function() {
+            return $sce.trustAsResourceUrl(this.pages[this.portIndex].youtubesrc);
         }
 
     }]);
