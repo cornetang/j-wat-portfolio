@@ -19,15 +19,11 @@
 					<br/>
 					<img src="{{ portfolio.pages[tab.getPortfo()].imgnumArray[portfolio.getImgNo()] }}" id="num" style="width:13%"/>
 				</div>
-				<!-- <div ng-show="portfolio.youtubeAct(tab.getPortfo())"> -->
+				<div ng-show="portfolio.youtubeAct(tab.getPortfo())">
 					<div class="embed-responsive embed-responsive-16by9">
 					  	<iframe class="embed-responsive-item" ng-src="{{ portfolio.getYoutubesrc(tab.getPortfo()) }}" allowfullscreen></iframe>
-					  	
 					</div>
-					testing123 <br/>
-				  	{{ portfolio.getYoutubesrc(tab.getPortfo()) }}
-				  	testing123
-				<!-- </div> -->
+				</div>
 			</div>
 		</div>
 	</div>

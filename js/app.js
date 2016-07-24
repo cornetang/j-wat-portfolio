@@ -104,20 +104,11 @@
         });
 
         this.preload = function(portno){
-<<<<<<< HEAD
             for (i=0; i<this.pages[portno].count; i++){
                 (new Image()).src = this.pages[portno].imgArray[i];
+                $('.testing').append(this.pages[portno].imgArray[i]);
             }
-=======
-            // $('.testing').append("clicked");
-            // if (this.pages[portno].slider===true){
-            //     $('.testing').append("slider!");
-            //     for (i=0; i<this.pages[portno].count; i++){
-            //         (new Image()).src = this.pages[portno].imgArray[i];
-            //         $('.testing').append(this.pages[portno].imgArray[i]);
-            //     }    
-            // }
->>>>>>> parent of 36f233f... fix youtube bug
+              
         }
 
         this.sliderAct = function(portno) {
@@ -133,47 +124,27 @@
         }
 
         this.increment = function(portno) {
-<<<<<<< HEAD
             $("#portimg").fadeTo("normal", 0);
+
             $timeout( function(){ 
                 ctrl.imgno = ctrl.imgno + 1;    
                 if (ctrl.imgno === ctrl.pages[portno].count) ctrl.imgno = 0;    
                 }, 400
             );
+            
             $("#portimg").fadeTo("normal", 1);
         }
 
         this.decrement = function(portno) {
             $("#portimg").fadeTo("normal", 0);
+
             $timeout( function(){ 
                 ctrl.imgno = ctrl.imgno - 1;
                 if (ctrl.imgno === -1) ctrl.imgno = ctrl.pages[portno].count - 1;
             }, 400
             );
+            
             $("#portimg").fadeTo("normal", 1);
-=======
-            // $("#portimg").fadeTo("normal", 0);
-
-            // $timeout( function(){ 
-            //     ctrl.imgno = ctrl.imgno + 1;    
-            //     if (ctrl.imgno === ctrl.pages[portno].count) ctrl.imgno = 0;    
-            //     }, 400
-            // );
-            
-            // $("#portimg").fadeTo("normal", 1);
-        }
-
-        this.decrement = function(portno) {
-            // $("#portimg").fadeTo("normal", 0);
-
-            // $timeout( function(){ 
-            //     ctrl.imgno = ctrl.imgno - 1;
-            //     if (ctrl.imgno === -1) ctrl.imgno = ctrl.pages[portno].count - 1;
-            // }, 400
-            // );
-            
-            // $("#portimg").fadeTo("normal", 1);
->>>>>>> parent of 36f233f... fix youtube bug
         }
 
         this.getImgNo = function() {
