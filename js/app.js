@@ -51,7 +51,6 @@
     app.controller('TabController', [ '$window', function($window){
         this.tab = 1;
         this.slide = -1;
-        this.portfo = -1;
         this.xsmenu = false;
 
         this.toggleXsMenu = function() {
@@ -67,7 +66,6 @@
             if (this.tab === 1) $window.scrollTo(0, 0);
             this.tab = tabno; 
             this.slide = -1; 
-            this.portfo = -1;
             if (this.tab === 1) $window.scrollTo(0, 0);
         }
 
@@ -79,15 +77,9 @@
             return this.slide === slideno;
         }
 
-        this.setSlide = function(index) {
+        this.setSlide = function() {
             this.slide = 1;
-            this.portfo = index;
         }
-
-        this.getPortfo = function(){
-            return this.portfo;
-        }
-
     }]);
 
     app.controller('PortfolioController', [ '$sce', 'portfoInfo', '$scope', '$timeout', function($sce, portfoInfo, $scope, $timeout){
@@ -104,14 +96,20 @@
           entry.title = "img/" + entry.name + "-title.jpg";
         });
 
+        this.resetImgNo = function(index) {
+            this.imgno = 0;
+            this.portIndex = index;
+            for (i=0; i<this.pages[index].count; i++){
+                (new Image()).src = this.pages[index].imgArray[i];
+            }
+        }
+
         this.getPortIndex = function(){
             return this.portIndex;
         }
 
         this.preload = function(portno){
-            for (i=0; i<this.pages[portno].count; i++){
-                (new Image()).src = this.pages[portno].imgArray[i];
-            }
+            
         }
 
         this.sliderAct = function() {
@@ -122,10 +120,7 @@
             return this.pages[this.portIndex].youtube;
         }
 
-        this.resetImgNo = function(index) {
-            this.imgno = 0;
-            this.portIndex = index;
-        }
+
 
         this.increment = function() {
             $("#portimg").fadeTo("normal", 0);
