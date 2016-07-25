@@ -168,7 +168,7 @@
                 return $sce.trustAsResourceUrl(this.pages[this.portIndex].youtubesrc);    
             }
             else {
-                return $sce.trustAsResourceUrl("/blankYoutube.html");
+                return $sce.trustAsResourceUrl("blankYoutube.html");
             }
             
         }
