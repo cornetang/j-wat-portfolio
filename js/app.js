@@ -93,11 +93,14 @@
         this.portIndex = -1;
 
         this.pages.forEach(function(entry){
-          for (i=1;i<=entry.count;i++) {
-            entry.imgArray[i-1] = "img/" + entry.name + i + ".jpg";
-            entry.imgnumArray[i-1] = "img/" + entry.name + "num" + i + ".jpg";
-          }
-          entry.title = "img/" + entry.name + "-title.jpg";
+            for (i=1;i<=entry.count;i++) {
+                entry.imgArray[i-1] = "img/" + entry.name + i + ".jpg";
+                entry.imgnumArray[i-1] = "img/" + entry.name + "num" + i + ".jpg";
+            }
+            entry.title = "img/" + entry.name + "-title.jpg";
+            if (entry.youtube===true){
+                entry.youtubesrc="https://www.youtube.com/embed/"+entry.youtubesrc+"?rel=0";
+            }            
         });
 
         this.resetImgNo = function(index) {
@@ -155,7 +158,7 @@
 
         this.getYoutubesrc = function(port) {
             if (port&&this.pages[this.portIndex].youtube) {
-                return $sce.trustAsResourceUrl("https://www.youtube.com/embed/"+this.pages[this.portIndex].youtubesrc);    
+                return $sce.trustAsResourceUrl(this.pages[this.portIndex].youtubesrc);    
             }
             else {
                 return $sce.trustAsResourceUrl("blankYoutube.html");
