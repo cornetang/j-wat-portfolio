@@ -102,10 +102,7 @@
 
         this.stop = function(){
             $('.append').append("stop");
-            $('iframe').contents().find('video').each(function () {
-                this.currentTime = 0;
-                this.pause();
-            });
+            $('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
             $('.append').append("STOPPED");
         }
 
