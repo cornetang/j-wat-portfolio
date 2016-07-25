@@ -169,13 +169,12 @@
             return this.imgno === this.pages[this.portIndex].count - 1;
         }
 
-        this.getYoutubesrc = function() {
-            if (this.pages[this.portIndex].youtube) {
+        this.getYoutubesrc = function(port) {
+            if (port&&this.pages[this.portIndex].youtube) {
                 return $sce.trustAsResourceUrl(this.pages[this.portIndex].youtubesrc);    
             }
             else {
-                $('.append').append("lalal");
-                return $sce.trustAsResourceUrl("");
+                return $sce.trustAsResourceUrl("/");
             }
             
         }
