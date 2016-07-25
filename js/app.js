@@ -8,22 +8,24 @@
                 title: "",
                 linksrc: "portfolio-animation.html",
                 imgsrc: "img/portfolio-01.jpg",
+                slider: true,
                 count: 10,
                 imgArray: [],
                 imgnumArray: [],
-                slider: true,
                 youtube: false,
+                youtubesrc: "",
             },
             { 
                 name: "illu",
                 title: "",
                 linksrc: "portfolio-illustration.html",
                 imgsrc: "img/portfolio-02.jpg",
+                slider: true,
                 count: 25,
                 imgArray: [],
                 imgnumArray: [],
-                slider: true,
                 youtube: false,
+                youtubesrc: "",
             },
             { 
                 name: "showreel",
@@ -31,6 +33,7 @@
                 linksrc: "portfolio-showreel.html",
                 imgsrc: "img/portfolio-03.jpg",
                 slider: false,
+                count: 0,
                 youtube: true,
                 youtubesrc: "https://www.youtube.com/embed/LSJI8RNI9Ps",
             },
@@ -40,11 +43,22 @@
                 title: "",
                 linksrc: "portfolio-freelance.html",
                 imgsrc: "img/portfolio-04.jpg",
+                slider: true,
                 count: 3,
                 imgArray: [],
                 imgnumArray: [],
-                slider: true,
                 youtube: false,
+                youtubesrc: "",
+            },
+            {
+                name: "showreel2",
+                title: "",
+                linksrc: "portfolio-showreel.html",
+                imgsrc: "img/portfolio-03.jpg",
+                slider: false,
+                count: 0,
+                youtube: true,
+                youtubesrc: "https://www.youtube.com/embed/DyFIzKYQQYE",
             }
         ]);
 
@@ -67,10 +81,6 @@
             this.tab = tabno; 
             this.slide = -1; 
             if (this.tab === 1) $window.scrollTo(0, 0);
-            $('iframe').contents().find('video').each(function () {
-                this.currentTime = 0;
-                this.pause();
-            });
         }
 
         this.checkTab = function(tabno) {
@@ -102,7 +112,7 @@
 
         this.stop = function(){
             $('.append').append("stop");
-            $('#youtubeFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+            $('#youtubeFrame').get(0).stopVideo();
             $('.append').append("STOPPED");
         }
 
@@ -160,7 +170,14 @@
         }
 
         this.getYoutubesrc = function() {
-            return $sce.trustAsResourceUrl(this.pages[this.portIndex].youtubesrc);
+            if (this.pages[this.portIndex].youtube) {
+                return $sce.trustAsResourceUrl(this.pages[this.portIndex].youtubesrc);    
+            }
+            else {
+                $('.append').append("lalal");
+                return "abc";
+            }
+            
         }
 
     }]);
