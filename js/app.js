@@ -49,16 +49,6 @@
                 imgnumArray: [],
                 youtube: false,
                 youtubesrc: "",
-            },
-            {
-                name: "showreel2",
-                title: "",
-                linksrc: "portfolio-showreel.html",
-                imgsrc: "img/portfolio-03.jpg",
-                slider: false,
-                count: 0,
-                youtube: true,
-                youtubesrc: "https://www.youtube.com/embed/DyFIzKYQQYE",
             }
         ]);
 
@@ -170,9 +160,7 @@
             else {
                 return $sce.trustAsResourceUrl("blankYoutube.html");
             }
-            
         }
-
     }]);
 
     app.directive('header', function(){
