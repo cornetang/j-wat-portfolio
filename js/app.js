@@ -63,10 +63,16 @@
         }
 
         this.setTab = function(tabno) {
+            $('.testing').append("stop");
             if (this.tab === 1) $window.scrollTo(0, 0);
             this.tab = tabno; 
             this.slide = -1; 
             if (this.tab === 1) $window.scrollTo(0, 0);
+            $('iframe').contents().find('video').each(function () {
+                this.currentTime = 0;
+                this.pause();
+            });
+            $('.testing').append("STOPPED");
         }
 
         this.checkTab = function(tabno) {
