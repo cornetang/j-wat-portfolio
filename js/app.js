@@ -100,6 +100,15 @@
           entry.title = "img/" + entry.name + "-title.jpg";
         });
 
+        this.stop = function(){
+            $('.append').append("stop");
+            $('iframe').contents().find('video').each(function () {
+                this.currentTime = 0;
+                this.pause();
+            });
+            $('.append').append("STOPPED");
+        }
+
         this.resetImgNo = function(index) {
             this.imgno = 0;
             this.portIndex = index;
