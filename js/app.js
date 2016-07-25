@@ -175,7 +175,7 @@
             }
             else {
                 $('.append').append("lalal");
-                return $sce.trustAsResourceUrl("https://www.youtube.com/embed/Zi3_bN9CfNA");
+                return $sce.trustAsResourceUrl("/");
             }
             
         }
