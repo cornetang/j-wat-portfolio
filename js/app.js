@@ -102,7 +102,7 @@
 
         this.stop = function(){
             $('.append').append("stop");
-            $('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+            $('#youtubeFrame')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
             $('.append').append("STOPPED");
         }
 
