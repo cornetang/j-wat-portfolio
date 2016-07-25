@@ -35,7 +35,7 @@
                 slider: false,
                 count: 0,
                 youtube: true,
-                youtubesrc: "https://www.youtube.com/embed/LSJI8RNI9Ps",
+                youtubesrc: "LSJI8RNI9Ps",
             },
             { 
                 
@@ -155,7 +155,7 @@
 
         this.getYoutubesrc = function(port) {
             if (port&&this.pages[this.portIndex].youtube) {
-                return $sce.trustAsResourceUrl(this.pages[this.portIndex].youtubesrc);    
+                return $sce.trustAsResourceUrl("https://www.youtube.com/embed/"+this.pages[this.portIndex].youtubesrc);    
             }
             else {
                 return $sce.trustAsResourceUrl("blankYoutube.html");
