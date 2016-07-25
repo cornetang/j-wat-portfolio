@@ -175,7 +175,7 @@
             }
             else {
                 $('.append').append("lalal");
-                return $sce.trustAsResourceUrl("/");
+                return $sce.trustAsResourceUrl("");
             }
             
         }
