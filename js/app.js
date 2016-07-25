@@ -110,12 +110,6 @@
           entry.title = "img/" + entry.name + "-title.jpg";
         });
 
-        this.stop = function(){
-            $('.append').append("stop");
-            $('#youtubeFrame').get(0).stopVideo();
-            $('.append').append("STOPPED");
-        }
-
         this.resetImgNo = function(index) {
             this.imgno = 0;
             this.portIndex = index;
@@ -174,7 +168,7 @@
                 return $sce.trustAsResourceUrl(this.pages[this.portIndex].youtubesrc);    
             }
             else {
-                return $sce.trustAsResourceUrl("/");
+                return $sce.trustAsResourceUrl("/blankYoutube.html");
             }
             
         }
